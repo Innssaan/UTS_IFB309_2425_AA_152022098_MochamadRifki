@@ -1,0 +1,63 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydroponics IoT Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Hydroponics IoT Dashboard</h1>
+            <p id="last-update">Last Update: Never</p>
+        </header>
+
+        <div class="dashboard">
+            <div class="sensor-card">
+                <i class="fas fa-thermometer-half"></i>
+                <h3>Temperature</h3>
+                <p id="temperature">-- °C</p>
+            </div>
+
+            <div class="sensor-card">
+                <i class="fas fa-tint"></i>
+                <h3>Humidity</h3>
+                <p id="humidity">-- %</p>
+            </div>
+
+            <div class="sensor-card">
+                <i class="fas fa-water"></i>
+                <h3>Turbidity</h3>
+                <p id="turbidity">-- NTU</p>
+            </div>
+
+            <div class="sensor-card">
+                <i class="fas fa-flask"></i>
+                <h3>pH Level</h3>
+                <p id="ph">--</p>
+            </div>
+        </div>
+
+        <div class="control-panel">
+            <h2>Pump Control</h2>
+            <div class="pump-status">
+                <span id="pump-indicator" class="indicator"></span>
+                <span id="pump-text">Pump is OFF</span>
+            </div>
+            <button id="toggle-pump" class="control-btn">
+                Toggle Pump
+            </button>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="sensorChart"></canvas>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
